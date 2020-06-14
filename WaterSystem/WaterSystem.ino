@@ -9,20 +9,20 @@ const int humiditySensorPin = A1;
 //motor pin
 const int motorPin = 6;
 
-int tresholdHumidity;
+int tresholdHumidity=1024;
 
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-
+  //Serial.print("start");
   //setting up sound sensor
   pinMode(triggerPin, OUTPUT);
   pinMode(echoPin, INPUT);
   //setting up motor
   pinMode(motorPin,OUTPUT);
-  digitalWrite(motorPin, LOW);
-  tresholdHumidity=1024;
+  //digitalWrite(motorPin, LOW);
+  //tresholdHumidity=1024;
 }
 //activates the motor for the specified time in miliseconds
 void activateMotorForTime(int miliseconds){
@@ -62,21 +62,21 @@ char buff[50];
 void loop() {
   //digitalWrite(motorPin, HIGH);
   if( Serial.available() > 0 ) {
-    tresholdHumidity = Serial.parseInt();
+    tresholdHumidity = Serial.parseInt();  
   }
-
+  
   if(getHumidity()>tresholdHumidity){
       digitalWrite(motorPin, HIGH);
   } else {
       digitalWrite(motorPin, LOW);
   }
+  //Serial.println(tresholdHumidity);
   int light = getLight();
   int distance = getDistance();
   int humidity = getHumidity();
-  // print out the value you read:
+  //print out the value you read:
   int charCount = sprintf(buff,"%d %d %d \n",light,distance,humidity);
 
-  //(int i= 0; i<=charCount; i++)
   Serial.print(buff);
   delay(1000);        // delay in between serial reads for stability
 }
