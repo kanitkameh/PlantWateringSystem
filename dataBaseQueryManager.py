@@ -11,7 +11,8 @@ with serial.Serial('/dev/ttyS3',9600,timeout=1) as ser:
         light = line[0]
         leftWaterInCm = line[1]
         humidity = line[2]
-        print('light '+light+' leftWaterInCm '+leftWaterInCm+' humidity '+humidity)
+        humidityThreshold = line[3]
+        print('light '+light+' leftWaterInCm '+leftWaterInCm+' humidity '+humidity+' humidityThreshold '+humidityThreshold)
         url = 'https://mysterious-brushlands-97617.herokuapp.com/data/add'
         objectToSend = {'light':(light), 'leftWaterInCm':(leftWaterInCm), 'humidity':(humidity)}
         headers = {'Content-type': 'application/json'}
@@ -20,4 +21,4 @@ with serial.Serial('/dev/ttyS3',9600,timeout=1) as ser:
         url = 'https://mysterious-brushlands-97617.herokuapp.com/data/currentThreshold'
         x = str(requests.get(url).content)
         print(x)
-        ser.write(x)
+        ser.write(x+' ')

@@ -65,17 +65,19 @@ void loop() {
     tresholdHumidity = Serial.parseInt();  
   }
   
-  if(getHumidity()>tresholdHumidity){
-      digitalWrite(motorPin, HIGH);
-  } else {
-      digitalWrite(motorPin, LOW);
-  }
+ 
   //Serial.println(tresholdHumidity);
   int light = getLight();
   int distance = getDistance();
   int humidity = getHumidity();
+  //motor activation
+  if(humidity>tresholdHumidity){
+      digitalWrite(motorPin, HIGH);
+  } else {
+      digitalWrite(motorPin, LOW);
+  }
   //print out the value you read:
-  int charCount = sprintf(buff,"%d %d %d \n",light,distance,humidity);
+  int charCount = sprintf(buff,"%d %d %d %d \n",light,distance,humidity,tresholdHumidity);
 
   Serial.print(buff);
   delay(1000);        // delay in between serial reads for stability
