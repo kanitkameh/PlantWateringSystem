@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main.xml"
+    app:startDestination="@id/now">
+
+    <fragment
+        android:id="@+id/now"
+        android:name="com.example.roboticsapp.ui.main.NowFragment"
+        android:label="now_fragment"
+        tools:layout="@layout/now_fragment">
+        <action
+            android:id="@+id/action_nowFragment2_to_statisticsFragment"
+            app:destination="@id/statistics" />
+    </fragment>
+    <fragment
+        android:id="@+id/statistics"
+        android:name="com.example.roboticsapp.ui.main.StatisticsFragment"
+        android:label="StatisticsFragment" />
+</navigation>

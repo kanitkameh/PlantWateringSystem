@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Self watering plant</string>
+    <string name="humidity">Humidity</string>
+    <string name="water">Water</string>
+    <string name="light">Light</string>
+    <string name="now">Now</string>
+    <string name="statistics">Statistics</string>
+    <string name="update">Update</string>
+</resources>
