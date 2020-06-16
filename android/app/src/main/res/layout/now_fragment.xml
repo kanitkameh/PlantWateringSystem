@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.main.NowFragment">
+
+    <TextView
+        android:id="@+id/currentThreshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:background="@android:color/white"
+        android:text="@string/update"
+        app:layout_constraintBottom_toBottomOf="@id/currentThreshold"
+        app:layout_constraintStart_toEndOf="@+id/currentThreshold"
+        app:layout_constraintTop_toTopOf="@id/currentThreshold" />
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/humidityBar"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:layout_marginTop="25sp"
+        app:cpv_barColor="#6acff7"
+        app:cpv_innerContourColor="@android:color/white"
+        app:cpv_outerContourColor="@android:color/white"
+        app:cpv_rimColor="@android:color/white"
+        app:cpv_textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentThreshold" />
+
+    <TextView
+        android:id="@+id/humidityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/humidityBar"
+        app:layout_constraintRight_toRightOf="@id/humidityBar"
+        app:layout_constraintTop_toBottomOf="@id/humidityBar" />
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/waterBar"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:layout_marginTop="25sp"
+        app:cpv_barColor="#6acff7"
+        app:cpv_innerContourColor="@android:color/white"
+        app:cpv_outerContourColor="@android:color/white"
+        app:cpv_rimColor="@android:color/white"
+        app:cpv_textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidityLabel" />
+
+    <TextView
+        android:id="@+id/waterLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/water"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/waterBar"
+        app:layout_constraintRight_toRightOf="@id/waterBar"
+        app:layout_constraintTop_toBottomOf="@id/waterBar" />
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/lightBar"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:layout_marginTop="25sp"
+        app:cpv_barColor="#6acff7"
+        app:cpv_innerContourColor="@android:color/white"
+        app:cpv_outerContourColor="@android:color/white"
+        app:cpv_rimColor="@android:color/white"
+        app:cpv_textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waterLabel" />
+
+    <TextView
+        android:id="@+id/lightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/light"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/lightBar"
+        app:layout_constraintRight_toRightOf="@id/lightBar"
+        app:layout_constraintTop_toBottomOf="@id/lightBar" />
+
+
+    <!--    <at.grabner.circleprogress.CircleProgressView-->
+    <!--        android:id="@+id/humidityBar"-->
+    <!--        android:layout_width="150sp"-->
+    <!--        android:layout_height="150sp"-->
+    <!--        android:layout_marginStart="50sp"-->
+    <!--        android:layout_marginTop="25sp"-->
+    <!--        app:cpv_barColor="#6acff7"-->
+    <!--        app:cpv_innerContourColor="@android:color/white"-->
+    <!--        app:cpv_outerContourColor="@android:color/white"-->
+    <!--        app:cpv_rimColor="@android:color/white"-->
+    <!--        app:cpv_textSize="30sp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/humidityLabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/humidity"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/humidityBar"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/humidityBar"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/humidityBar" />-->
+
+    <!--    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar-->
+    <!--        android:id="@+id/waterBar"-->
+    <!--        android:layout_width="200sp"-->
+    <!--        android:layout_height="20sp"-->
+    <!--        android:layout_marginTop="100sp"-->
+    <!--        android:rotation="270"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/humidityLabel"-->
+    <!--        app:rcBackgroundColor="#0A000000"-->
+    <!--        app:rcMax="100"-->
+    <!--        app:rcProgress="50"-->
+    <!--        app:rcProgressColor="#6acff7" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/waterPercent"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="50%"-->
+    <!--        android:textSize="30sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/waterBar"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/waterBar" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/waterText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/water"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/waterBar"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/waterPercent" />-->
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/sunImage"-->
+    <!--        android:layout_width="120sp"-->
+    <!--        android:layout_height="120sp"-->
+    <!--        android:layout_marginStart="50sp"-->
+    <!--        android:layout_marginTop="60sp"-->
+    <!--        android:src="@drawable/sun"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/waterText" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/lightPercent"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="30sp"-->
+    <!--        android:layout_marginTop="30sp"-->
+    <!--        android:textSize="30sp"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/sunImage"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/sunImage" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/lightText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/light"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/lightPercent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/lightPercent" />-->
+
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:menu="@menu/bottom_navigation_menu" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
