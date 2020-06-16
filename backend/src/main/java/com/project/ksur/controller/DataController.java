@@ -35,11 +35,13 @@ public class DataController {
 
     @GetMapping(value = "/statistics/{days}")
     public StatisticsDTO getStatistics(@PathVariable("days") Integer days) {
+        Data currentData = this.dataService.getMostCurrentData();
+        Integer tankDepth = this.dataService.getTankDepth();
         Integer avgHumidity = this.dataService.getAvgHumidity(days);
         Integer avgLight = this.dataService.getAvgLight(days);
         List<Integer> leftWaterForDays = this.dataService.getLeftWaterForDays(7);
         Integer avgWater = calcAvgWater(leftWaterForDays);
-        return new StatisticsDTO(avgHumidity, avgWater, avgLight);
+        return new StatisticsDTO(avgHumidity, avgWater, avgLight, currentData.getLeftWaterInCm(), tankDepth);
     }
 
     @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
